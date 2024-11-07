@@ -59,7 +59,7 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
   color: var(--text-color);
-  background-color: var(--bg-lv1-color);
+  background-color: var(--brand-focus);
   overflow-x: hidden;
 }
 
