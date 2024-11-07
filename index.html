@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title -->
+    <title>My Work</title>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      id="favicon"
+      href="./assets/icons/favicon.png"
+      type="image/png"
+    />
+
+    <!-- Imports -->
+
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <script
+      src="https://kit.fontawesome.com/d28c160745.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+    <!-- Styles Tags -->
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles/navigationBar.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+
+    <!-- Script Tags -->
+    <script src="./JS/mobileUi.js" defer></script>
+    <script src="./JS/setTheme.js" defer></script>
+    <script src="./JS/carouselSlide.js" type="module" defer></script>
+    <script src="./JS/carousel.js" defer></script>
+    <script src="./JS/logoAnimation.js" defer></script>
+  </head>
+  <body>
+    <nav class="size">
+      <div class="mobile-1st-line-container">
+        <div class="logo-container">
+          <img src="./assets/icons/Logo_light.png" alt="" />
+          <span>ANASTASIOU</span>
+        </div>
+      </div>
+      <div class="menu-container">
+        <div class="social-item">
+          <a
+            href="#"
+            class="link button secondary-btn secondary-btn-color"
+            id="CV-btn"
+            download="Kostas Anastasiou Resume"
+          >
+            Download CV</a
+          >
+        </div>
+        <ul class="social-list">
+          <li class="social-item">
+            <a
+              href="https://www.linkedin.com/in/kostasanastasiou/"
+              target="_blank"
+              class="link"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
+          </li>
+          <li class="social-item">
+            <a
+              href="https://github.com/kostas23Github"
+              target="_blank"
+              class="link"
+            >
+              <i class="fa-brands fa-github"></i
+            ></a>
+          </li>
+        </ul>
+        <div class="social-item data-theme-toggle">
+          <span class="material-icons toggle-theme-btn" id="light-mode-btn">
+            light_mode
+          </span>
+          <span class="material-icons toggle-theme-btn" id="dark-mode-btn">
+            dark_mode
+          </span>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <section class="hero-container size">
+        <div class="profile-img-container">
+          <img src="./assets/profile_pic_light.png" alt="Profile pic" />
+        </div>
+        <div class="my-info-container">
+          <h1>
+            Hi, I'm Kostas <span class="material-icons"> waving_hand </span>
+          </h1>
+          <p>
+            An aspiring developer, currently based in Greece!
+            <img src="./assets/icons/greek flag.png" alt="Greek Flag" />
+          </p>
+          <a
+            href="mailto:kanastasiou.dev@gmail.com"
+            class="button primary-btn primary-btn-color"
+            >Let's chat!</a
+          >
+        </div>
+      </section>
+      <section class="work-container size">
+        <div class="carousel-container">
+          <header class="carousel-header-container">
+            <div class="carousel-title-container">
+              <h2>Projects</h2>
+            </div>
+            <div class="carousel-navigation-btns">
+              <span class="material-icons ctrl-prev"> arrow_back </span>
+              <span class="material-icons ctrl-next"> arrow_forward </span>
+            </div>
+          </header>
+          <div class="carousel-slides">
+            <!-- Code injected by index.js -->
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-container size">
+        <p>
+          I’m always excited to discuss new projects and opportunities. Feel
+          free to reach out.
+        </p>
+        <div class="footer-menu-container">
+          <a
+            href="mailto:kanastasiou.dev@gmail.com"
+            class="button primary-btn footer-primary-btn"
+            >Let's chat!</a
+          >
+          <ul class="social-list">
+            <li class="social-item">
+              <a
+                href="https://www.linkedin.com/in/kostasanastasiou/"
+                target="_blank"
+                class="link"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></a>
+            </li>
+            <li class="social-item">
+              <a
+                href="https://github.com/kostas23Github"
+                target="_blank"
+                class="link"
+              >
+                <i class="fa-brands fa-github"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright-container size">
+        <span>Copyright © 2024, Kostas Anastasiou</span>
+      </div>
+    </footer>
+  </body>
+</html>

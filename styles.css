@@ -1,0 +1,239 @@
+/* Noto Sans Font */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Work Sans Font */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Poppins Font */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  font-family: "Noto Sans", sans-serif;
+  --neutral-black: #000;
+  --neutral-white: #fff;
+  --brand-white: #f2f4f2;
+  --brand-semi-white: #d2d3d2;
+  --brand-green: #3e4b41;
+  --brand-semi-dark: #1d231e;
+  --brand-dark: #101411;
+  --brand-focus: #fee500;
+}
+
+:root[data-theme="light"] {
+  --header-color: var(--neutral-black);
+  --bg-lv1-color: var(--brand-white);
+  --bg-lv2-color: var(--neutral-white);
+  --text-color: var(--brand-dark);
+  --cta-primary-color: var(--brand-dark);
+  --cta-primary-text-color: var(--neutral-white);
+  --cta-secondary-color: var(--neutral-white);
+  --cta-secondary-text-color: var(--brand-dark);
+}
+
+:root[data-theme="dark"] {
+  --header-color: var(--neutral-white);
+  --bg-lv1-color: var(--brand-dark);
+  --bg-lv2-color: var(--brand-semi-dark);
+  --text-color: var(--brand-semi-white);
+  --cta-primary-color: var(--brand-focus);
+  --cta-primary-text-color: var(--neutral-black);
+  --cta-secondary-color: var(--brand-semi-dark);
+  --cta-secondary-text-color: var(--neutral-white);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+body {
+  width: 100%;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: var(--text-color);
+  background-color: var(--bg-lv1-color);
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Work Sans", sans-serif;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--header-color);
+}
+
+h1 {
+  font-size: 64px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+}
+
+li > * {
+  cursor: pointer;
+}
+
+p, span {
+  color: var(--text-color);
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  font-size: inherit;
+  color: inherit;
+}
+
+i {
+  color: var(--text-color);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+i:hover{
+  transform: scale(1.2);
+}
+
+button {
+  all: unset; /* Reset all default styles */
+  display: inline-block; /* Ensure the button behaves like a button */
+  cursor: pointer; /* Show pointer cursor on hover */
+  background: none;
+  border: none;
+  font: inherit; /* Inherit font styles from parent */
+  color: inherit; /* Inherit text color */
+  text-align: center;
+}
+
+.size {
+  width: 67.5%;
+  margin: 0 auto;
+}
+
+.text {
+  font-size: 16px;
+  line-height: 22.4px;
+  font-weight: 400;
+}
+
+.button {
+  border-radius: 57px;
+  line-height: 1.4;
+  width: max-content;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 600;
+  text-align: center;
+}
+
+.primary-btn {
+  padding: 18px 32px;
+  transition: transform .3s;
+}
+
+.primary-btn-color {
+  background-color: var(--cta-primary-color);
+  color: var(--cta-primary-text-color);
+}
+
+.secondary-btn {
+  padding: 8px 18px;
+  border: 1px solid var(--cta-primary-color);
+  letter-spacing: -0.8px;
+  transition: transform .3s;
+}
+
+.secondary-btn-color {
+  background-color: var(--cta-secondary-color);
+  color: var(--cta-secondary-text-color);
+}
+
+.primary-btn:hover, .secondary-btn:hover {
+  transform: scale(1.15);
+}
+
+@media (max-width: 1300px) {
+  .size {
+    width: 80%;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+  
+  h2 {
+    font-size: 32px;
+  }
+  
+  h3 {
+    font-size: 28px;
+  }
+
+  p, span, span.material-icons, i {
+    font-size: 22px;
+  }
+
+  .primary-btn {
+    padding: 16px 28px;
+  }
+
+  .secondary-btn {
+    padding: 7px 16px;
+  }
+}
+
+@media (max-width: 800px) {
+  .size {
+    width: 88%;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+  
+  h2 {
+    font-size: 28px;
+  }
+  
+  h3 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 700px) {
+  .primary-btn {
+    width: 100%;
+    max-width: 380px;
+  }
+}
+
+@media (max-width: 500px) {
+  .size {
+    width: 100%;
+  }
+}
