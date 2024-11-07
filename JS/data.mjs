@@ -4,7 +4,7 @@ const data = [
       src: "./assets/sites/Mindful-aliance.jpeg",
       alt: "A screenshot containing the 1st section of the website.",
     },
-    header: "Landing Page",
+    header: "Mind Aliance",
     website: "https://kostas23github.github.io/mindful-aliance/",
     code: "https://github.com/kostas23Github/mindful-aliance",
     technologies: {
