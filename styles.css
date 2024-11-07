@@ -60,7 +60,7 @@ body {
   font-style: normal;
   color: var(--text-color);
   background-color: var(--bg-lv1-color);
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 h1,
