@@ -85,7 +85,6 @@ section.work-container {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  overflow: hidden;
 }
 
 /* < My Work Carousel / Header > */
@@ -123,13 +122,20 @@ header.carousel-header-container {
 .card {
   display: flex;
   flex-direction: column;
+  background-color: var(--bg-lv2-color);
+  border-radius: 24px;
+  transition: .4s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px #d2d3d286;
 }
 
 img.card-img {
   width: 412px;
   aspect-ratio: 412/246;
   border-radius: 24px;
-  border: 1px solid var(--brand-green);
 }
 
 .card-info {
@@ -222,7 +228,7 @@ a.info-link:hover span::after {
   top: 9px;
   width: 20px;
   height: 20px;
-  background-color: var(--bg-lv1-color);
+  background-color: var(--bg-lv2-color);
   border-radius: 12px;
 }
 
@@ -341,6 +347,10 @@ ul.technologies-used-list i {
     box-shadow: none;
     padding: 36px 24px;
   }
+  
+  .profile-img-container > img {
+    width: 190px;
+  }
 
   .my-info-container {
     text-align: left;
@@ -353,10 +363,6 @@ ul.technologies-used-list i {
 }
 
 @media (max-width: 400px) {
-  .profile-img-container > img {
-    width: 100%;
-  }
-
   img.card-img {
     width: calc(
       100vw - 48px
