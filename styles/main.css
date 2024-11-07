@@ -81,13 +81,6 @@ section.work-container {
   padding: 64px 0;
 }
 
-.carousel-container {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  overflow-y: hidden;
-}
-
 /* < My Work Carousel / Header > */
 header.carousel-header-container {
   display: flex;
@@ -114,6 +107,14 @@ header.carousel-header-container {
 
 /* < Work Carousel / Carousel Slides > */
 
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  overflow: hidden;
+}
+
+
 .carousel-slides {
   display: flex;
   gap: 30px;
@@ -128,12 +129,8 @@ header.carousel-header-container {
   transition: .4s;
 }
 
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 5px 20px #d2d3d286;
-}
-
 img.card-img {
+  margin: 12px;
   width: 412px;
   aspect-ratio: 412/246;
   border-radius: 24px;
@@ -363,10 +360,29 @@ ul.technologies-used-list i {
   }
 }
 
-@media (max-width: 400px) {
+@media (hover: none) and (pointer: coarse) {
+  header.carousel-header-container {
+    position: sticky;
+    left: 0;
+  }
+
+  .carousel-container {
+    overflow-x: scroll;
+    scrollbar-width: none; /* Firefox */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .carousel-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+  }
+
+  
+}
+
+@media (max-width: 430px) {
   img.card-img {
     width: calc(
-      100vw - 48px
+      100vw - 48px - 24px
     ); /* 100% would shrink each slide so that all occupy 100% of parent. 48px = padding */
   }
 }
