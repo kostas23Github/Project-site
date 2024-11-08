@@ -102,13 +102,18 @@ header.carousel-header-container {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  overflow: hidden;
 }
 
 .carousel-slides {
+  overflow-x: scroll;
   display: flex;
   gap: 30px;
   transition: 600ms;
+  scrollbar-width: none; /* Firefox */
+  -webkit-overflow-scrolling: touch;
+}
+.carousel-slides::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
 }
 
 .card {
@@ -340,6 +345,10 @@ ul.technologies-used-list i {
   section.work-container {
     padding: 48px 24px;
   }
+
+  .carousel-container {
+    overflow: hidden;
+  }
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -358,23 +367,6 @@ ul.technologies-used-list i {
 
   .technologies-used-container:hover > .wrapper {
     animation: mouseIn 0.3s forwards 0.2s;
-  }
-}
-
-@media (hover: none) and (pointer: coarse) {
-  header.carousel-header-container {
-    position: sticky;
-    left: 0;
-  }
-
-  .carousel-container {
-    overflow-x: scroll;
-    scrollbar-width: none; /* Firefox */
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .carousel-container::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Edge */
   }
 }
 
