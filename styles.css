@@ -96,7 +96,8 @@ li > * {
   cursor: pointer;
 }
 
-p, span {
+p,
+span {
   color: var(--text-color);
   font-size: 24px;
   line-height: 1.5;
@@ -113,11 +114,7 @@ i {
   font-size: 24px;
   line-height: 1;
   cursor: pointer;
-  transition: .2s ease;
-}
-
-i:hover{
-  transform: scale(1.2);
+  transition: 0.2s ease;
 }
 
 button {
@@ -153,7 +150,7 @@ button {
 
 .primary-btn {
   padding: 18px 32px;
-  transition: transform .3s;
+  transition: transform 0.3s;
 }
 
 .primary-btn-color {
@@ -165,16 +162,12 @@ button {
   padding: 8px 18px;
   border: 1px solid var(--cta-primary-color);
   letter-spacing: -0.8px;
-  transition: transform .3s;
+  transition: transform 0.3s;
 }
 
 .secondary-btn-color {
   background-color: var(--cta-secondary-color);
   color: var(--cta-secondary-text-color);
-}
-
-.primary-btn:hover, .secondary-btn:hover {
-  transform: scale(1.15);
 }
 
 @media (max-width: 1300px) {
@@ -185,16 +178,19 @@ button {
   h1 {
     font-size: 48px;
   }
-  
+
   h2 {
     font-size: 32px;
   }
-  
+
   h3 {
     font-size: 28px;
   }
 
-  p, span, span.material-icons, i {
+  p,
+  span,
+  span.material-icons,
+  i {
     font-size: 22px;
   }
 
@@ -215,11 +211,11 @@ button {
   h1 {
     font-size: 40px;
   }
-  
+
   h2 {
     font-size: 28px;
   }
-  
+
   h3 {
     font-size: 26px;
   }
@@ -235,5 +231,16 @@ button {
 @media (max-width: 500px) {
   .size {
     width: 100%;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  i:hover {
+    transform: scale(1.2);
+  }
+
+  .primary-btn:hover,
+  .secondary-btn:hover {
+    transform: scale(1.15);
   }
 }

@@ -54,10 +54,6 @@ ul.social-list > li.social-item, .data-theme-toggle {
   transition: transform 0.4s;
 }
 
-.data-theme-toggle:hover {
-  transform: scale(1.2);
-}
-
 span.toggle-theme-btn {
   font-size: 24px;
   position: absolute;
@@ -106,5 +102,10 @@ span.toggle-theme-btn.visible {
   nav {
     padding: 24px;
   }
+}
 
+@media (hover: hover) and (pointer: fine) {
+  .data-theme-toggle:hover {
+    transform: scale(1.2);
+  }
 }
