@@ -33,6 +33,13 @@ class Slide {
     image.alt = this.site.img.default.alt;
 
     card.addEventListener("mouseenter", () => {
+      // Reset all cards hover image.
+      Array.from(document.querySelectorAll(".card-img")).forEach(
+        (img, index) => {
+          img.src = data[index].img.default.src;
+          img.alt = data[index].img.default.alt;
+        }
+      );
       // Hover image animation.
       // Create timeline, then move upwards by 30px with 1sec duration.
       // While only .1s of the 1st 1sec have passed the 2nd tween(opacity fade) start to execute with .5s duration, ending at .6s.
@@ -41,21 +48,24 @@ class Slide {
       // Finally(.7s), i.e. slightly after the moving down has started, image fade's in.
       gsap
         .timeline()
-        .to(image, { y: -30, duration: 0.6 })
-        .to(image, { opacity: 0, duration: 0.5 }, 0.1)
+        .to(image, { opacity: 0, duration: 0.1 }, 0)
         .add(() => {
           // Hover image change.
           image.src = this.site.img.hover.src;
           image.alt = this.site.img.hover.alt;
-        }, .6)
-        .to(image, { y: 0, duration: 0.5 })
-        .to(image, { opacity: 1, duration: 0.5 }, 0.7);
+        }, 0.1)
+        .to(image, { opacity: 1, duration: 0.1 }, 0.1);
     });
 
     card.addEventListener("mouseleave", () => {
       // Revert to default image immediately.
-      image.src = this.site.img.default.src;
-      image.alt = this.site.img.default.alt;
+      // Reset all cards hover image.
+      Array.from(document.querySelectorAll(".card-img")).forEach(
+        (img, index) => {
+          img.src = data[index].img.default.src;
+          img.alt = data[index].img.default.alt;
+        }
+      );
     });
 
     const cardInfo = this.createElement("div", card, "card-info");
