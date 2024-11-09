@@ -22,38 +22,40 @@ class Slide {
     return element;
   }
 
-  // Event handler containing the animation logic of each slide's hover animation.
-  slideImgEffect(element, state) {
-    const tl = gsap.timeline();
-
-    tl.to(element, { y: -30, duration: 1 })
-    .to(element, { opacity: 0, duration: .5 }, 0.1)
-      .add(() => {
-        element.src = this.site.img[state].src;
-        element.alt = this.site.img[state].alt;
-      })
-      .to(element, { y: 0, duration: .5 })
-      .to(element, { opacity: 1, duration: .5 }, 1)
-  }
-
   // Main class method
   createCard() {
     // null parent arg bc this will be declared when the card instance is created & added manualy at the DOM.
     const card = this.createElement("div", null, "card", "slide");
 
     const image = this.createElement("img", card, "card-img");
-    
+
     image.src = this.site.img.default.src;
     image.alt = this.site.img.default.alt;
 
     card.addEventListener("mouseenter", () => {
-      // Show hover image.
-      this.slideImgEffect(image, "hover");
+      // Hover image animation.
+      // Create timeline, then move upwards by 30px with 1sec duration.
+      // While only .1s of the 1st 1sec have passed the 2nd tween(opacity fade) start to execute with .5s duration, ending at .6s.
+      // Then with at .6 I change image's src.
+      // Then(.6s) the new image moves down to 0px(i.e. the starting position).
+      // Finally(.7s), i.e. slightly after the moving down has started, image fade's in.
+      gsap
+        .timeline()
+        .to(image, { y: -30, duration: 0.6 })
+        .to(image, { opacity: 0, duration: 0.5 }, 0.1)
+        .add(() => {
+          // Hover image change.
+          image.src = this.site.img.hover.src;
+          image.alt = this.site.img.hover.alt;
+        }, .6)
+        .to(image, { y: 0, duration: 0.5 })
+        .to(image, { opacity: 1, duration: 0.5 }, 0.7);
     });
 
     card.addEventListener("mouseleave", () => {
-      // Revert to default image.
-      this.slideImgEffect(image, "default");
+      // Revert to default image immediately.
+      image.src = this.site.img.default.src;
+      image.alt = this.site.img.default.alt;
     });
 
     const cardInfo = this.createElement("div", card, "card-info");
