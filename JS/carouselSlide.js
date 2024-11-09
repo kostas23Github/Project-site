@@ -8,7 +8,6 @@
 import data from "./data.mjs";
 import technologiesColorPalette from "./technologiesColorPalette.mjs";
 
-
 // Create card instances bases on the data.mjs data obj, and place on the DOM.
 class Slide {
   constructor(site) {
@@ -23,15 +22,39 @@ class Slide {
     return element;
   }
 
+  // Event handler containing the animation logic of each slide's hover animation.
+  slideImgEffect(element, state) {
+    const tl = gsap.timeline();
+
+    tl.to(element, { y: -30, duration: 1 })
+    .to(element, { opacity: 0, duration: .5 }, 0.1)
+      .add(() => {
+        element.src = this.site.img[state].src;
+        element.alt = this.site.img[state].alt;
+      })
+      .to(element, { y: 0, duration: .5 })
+      .to(element, { opacity: 1, duration: .5 }, 1)
+  }
+
   // Main class method
   createCard() {
     // null parent arg bc this will be declared when the card instance is created & added manualy at the DOM.
     const card = this.createElement("div", null, "card", "slide");
 
-    const img = this.createElement("img", card, "card-img");
+    const image = this.createElement("img", card, "card-img");
+    
+    image.src = this.site.img.default.src;
+    image.alt = this.site.img.default.alt;
 
-    img.src = this.site.img.src;
-    img.alt = this.site.img.alt;
+    card.addEventListener("mouseenter", () => {
+      // Show hover image.
+      this.slideImgEffect(image, "hover");
+    });
+
+    card.addEventListener("mouseleave", () => {
+      // Revert to default image.
+      this.slideImgEffect(image, "default");
+    });
 
     const cardInfo = this.createElement("div", card, "card-info");
 
@@ -53,14 +76,14 @@ class Slide {
 
     // Check if link string value exists implement logic & UI
     if (this.site.code.length > 0) {
-    aViewCodeTag.href = this.site.code;
-    aViewCodeTag.target = "_blank";
-    aViewCodeTag.rel = "noopener noreferrer";
+      aViewCodeTag.href = this.site.code;
+      aViewCodeTag.target = "_blank";
+      aViewCodeTag.rel = "noopener noreferrer";
     } else {
       // Disable link and childs' mouse events
       aViewCodeTag.disabled = true;
       aViewCodeTag.style.pointerEvents = "none";
-      aViewCodeTag.style.opacity = .4;
+      aViewCodeTag.style.opacity = 0.4;
     }
 
     const iconGithub = this.createElement(
@@ -157,7 +180,7 @@ class Slide {
       ([, aValue], [, bValue]) =>
         parseFloat(bValue, 10) - parseFloat(aValue, 10)
     );
-    
+
     // Initialize values for wrapper(self-made icon)'s background property. The colors and occuping length are based on each language's usage rate.
     // wrapperBgString holds the string value of the bg conic-gradient property.
     let wrapperBgString = "conic-gradient(";
@@ -169,7 +192,7 @@ class Slide {
     // Loop through each technology and create respective DOM elements.
     sortedTechnologies.forEach((technology) => {
       const item = this.createElement("li", technologiesList, "technology");
-      
+
       // The dot before each language.
       const icon = this.createElement("i", item, "fa-solid", "fa-circle");
       // From the Object.entries returned array, technology is an item, and technology[0] is the first item of the item, in this case the key of the [ key, value ] pairs, which happens to be a key of the technologiesColorPalette obj as well.
@@ -199,7 +222,7 @@ class Slide {
 
     // Set property after removing last 2 characters(a space and a comma), also add the closing parenthesis.
     wrapperBgString = wrapperBgString.slice(0, -2) + ")";
-    
+
     wrapper.style.background = wrapperBgString;
 
     /**

@@ -1,8 +1,14 @@
 const data = [
   {
     img: {
-      src: "./assets/sites/Mindful-aliance.jpeg",
-      alt: "A screenshot containing the 1st section of the website.",
+      default: {
+        src: "./assets/sites/Mindful-aliance.jpeg",
+        alt: "A screenshot containing the 1st section of the website."
+      },
+      hover: {
+        src: "./assets/sites/Mindful-aliance - hover.jpeg",
+        alt: "A screenshot containing another section of the website."
+      }
     },
     header: "Mind Aliance",
     website: "https://kostas23github.github.io/mindful-aliance/",
@@ -15,8 +21,14 @@ const data = [
   },
   {
     img: {
-      src: "./assets/sites/National Intelligence - Dashboard.jpeg",
-      alt: "A screenshot containing a dashboard.",
+      default: {
+        src: "./assets/sites/National Intelligence - Dashboard.jpeg",
+        alt: "A screenshot containing a dashboard.",
+      },
+      hover: {
+        src: "./assets/sites/National Intelligence - Login.jpeg",
+        alt: "User Login page"
+      }
     },
     header: "User Login - Dashboard",
     website: "https://kostas23github.github.io/National-Intelligence-Council/",
@@ -29,8 +41,14 @@ const data = [
   },
   {
     img: {
-      src: "./assets/sites/calculator.jpeg",
-      alt: "Calculator",
+      default: {
+        src: "./assets/sites/calculator.jpeg",
+        alt: "A screenshot with a scientific calculator.",
+      },
+      hover: {
+        src: "./assets/sites/calculator - hover.jpeg",
+        alt: "A more simple calculator.",
+      }
     },
     header: "A calculator",
     website: "https://kostas23github.github.io/whitecalculator/",
@@ -43,8 +61,14 @@ const data = [
   },
   {
     img: {
-      src: "./assets/sites/kittsassociates.jpeg",
-      alt: "kittsassociates website",
+      default: {
+        src: "./assets/sites/kittsassociates.jpeg",
+        alt: "kittsassociates website",
+      },
+      hover: {
+        src: "./assets/sites/kittsassociates - hover.jpeg",
+        alt: "Another page of the site"
+      }
     },
     header: "A small website",
     website: "https://kittsassociates.com/",
@@ -55,8 +79,14 @@ const data = [
   },
   {
     img: {
-      src: "./assets/sites/creative-studio.jpeg",
-      alt: "Home Page",
+      default: {
+        src: "./assets/sites/creative-studio.jpeg",
+        alt: "Home Page",
+      },
+      hover: {
+        src: "./assets/sites/creative-studio - hover.jpeg",
+        alt: "Mobile view of the site."
+      }
     },
     header: "Home Page",
     website: "https://kostas23github.github.io/koutsouradis/",
@@ -69,8 +99,15 @@ const data = [
   },
   {
     img: {
-      src: "./assets/sites/polyviewhealth.jpeg",
-      alt: "Home Page",
+      default: {
+        src: "./assets/sites/polyviewhealth.jpeg",
+        alt: "Home Page",
+      },
+      hover: {
+        src: "./assets/sites/polyviewhealth.jpeg",
+        alt: "Home Page",
+      },
+
     },
     header: "PolyviewHealth",
     website: "https://polyviewhealth.com/",
@@ -83,8 +120,14 @@ const data = [
   },
   {
     img: {
-      src: "./assets/sites/pet-appointments.jpeg",
-      alt: "Pet appointments list",
+      default: {
+        src: "./assets/sites/pet-appointments.jpeg",
+        alt: "Pet appointments list",
+      },
+      hover: {
+        src: "./assets/sites/pet-appointments - hover.jpeg",
+        alt: "Pet appointments form UI"
+      }
     },
     header: "Pet appointments management",
     website: "https://kostas23github.github.io/linkedin-full-react/",
@@ -97,8 +140,14 @@ const data = [
   },
   {
     img: {
-      src: "./assets/sites/myFlix.jpeg",
-      alt: "Netflix home page",
+      default: {
+        src: "./assets/sites/myFlix.jpeg",
+        alt: "Netflix home page",
+      },
+      hover: {
+        src: "./assets/sites/myFlix - hover.jpeg",
+        alt: "Netflix movie info page"
+      }
     },
     header: "Netflix Demo",
     website: "https://kostas23github.github.io/mymdb2/",
@@ -111,8 +160,14 @@ const data = [
   },
   {
     img: {
-      src: "./assets/sites/hover-swipe.jpeg",
-      alt: "Hover/Swipe",
+      default: {
+        src: "./assets/sites/hover-swipe.jpeg",
+        alt: "A page with some images that the user can hover and/or like dislike.",
+      },
+      hover: {
+        src: "./assets/sites/hover-swipe - hover.jpeg",
+        alt: "The hover effect."
+      }
     },
     header: "Hover/Swipe",
     website: "https://kostas23github.github.io/hover-swipe-effect/",

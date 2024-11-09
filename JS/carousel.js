@@ -5,7 +5,7 @@
  * Perform size calculations
  * Next Slide Listener
  * Previous Slide Listener
-*/
+ */
 
 // Carousel parent.
 const carouselContainer = document.querySelector(".carousel-container");
@@ -37,6 +37,7 @@ window.addEventListener("resize", () => (slideInterval = getValues()));
 // Scrolls carousel
 function scrollToSlide(index) {
   const scrollPosition = slideInterval * index;
+
   carouselSlides.scrollTo({
     left: scrollPosition,
     behavior: "smooth",
@@ -53,12 +54,11 @@ btnNext.addEventListener("click", () => {
     slides[slides.length - 1].getBoundingClientRect().left +
     slides[slides.length - 1].getBoundingClientRect().width;
 
-    // With a 10px buffer for large mobile screens.
+  // With a 10px buffer for large mobile screens.
   const noMoreSlides = containerRightPos > lastSlideRightPos - 10;
-console.log(containerRightPos, lastSlideRightPos);
 
-  // Determine current slide if user has scrolled based on the scrolled position of the carousel.
-  currentSlide = Math.floor(carouselSlides.scrollLeft / slideInterval);
+  // Determine current slide if user has scrolled based on the scrolled position of the carousel. Added the 1 as a buffer bc on desktop devices it scrolls shy of the slideInterval length for some reason.
+  currentSlide = Math.floor((carouselSlides.scrollLeft + 1) / slideInterval);
 
   // This condition is valid only if one slide is visible at a time
   if (currentSlide < slides.length - 1) {
