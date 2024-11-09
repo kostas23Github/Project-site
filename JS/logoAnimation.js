@@ -2,7 +2,17 @@
  * Animation of navbar's logo(K character) using GSAP library. 
 */
 
-const logo = document.querySelector(".logo-container > img");
+const logo = document.querySelector(".k-container > img");
+const logoTooltip = document.querySelector(".k-container > #k-tooltip");
+
+
+const initialAnimation = gsap.timeline({ repeat: -1, repeatDelay: 5 })
+.to(logo, {scale: 0.5, duration: 0.1}, 1)
+.to(logo, {scale: 2, duration: .1})
+.to(logo, {scale: 1, duration: .1})
+.to(logoTooltip, {opacity: 1, delay: .1})
+.to(logoTooltip, {opacity: 0, duration: .1, delay: 1.5});
+
 
 const animation = function () {
   const parent = document.querySelector(".logo-container");
@@ -71,8 +81,18 @@ const animation = function () {
       parent,
       { x: -siblingHeight - 6, duration: 0.5, ease: "power1.in" },
       6.1
-    ); // The -6 is the gap value
+    ) // The -6 is the gap value
+    .add(() => {
+      logoTooltip.textContent = "Thanks!";
+    })
+    .to(logoTooltip, { x: parentWidth })
+    .to(logoTooltip, {opacity: 1})
+    .to(logoTooltip, {opacity: 0, delay: 1});
 };
 
 // Execute listener once!
-logo.addEventListener("mouseover", animation, { once: true });
+logo.addEventListener("mouseover", () => {
+  logoTooltip.style.opacity = 0;
+  initialAnimation.kill();
+  animation();
+}, { once: true });

@@ -21,7 +21,7 @@ function setTheme(theme) {
 
   // Update logo & profile img.
   document.querySelector(
-    ".logo-container > img"
+    ".k-container > img"
   ).src = `./assets/icons/Logo_${newTheme}.png`;
   document.querySelector(
     ".profile-img-container > img"
@@ -62,7 +62,7 @@ function setTheme(theme) {
       moonBtn.classList.add("visible");
       sunBtn.classList.remove("visible");
       document.querySelector(
-        ".logo-container > img"
+        ".k-container > img"
       ).src = `./assets/icons/Logo_dark.png`;
       document.querySelector(
         ".profile-img-container > img"
@@ -76,7 +76,7 @@ function setTheme(theme) {
     sunBtn.classList.remove("visible");
 
     document.querySelector(
-      ".logo-container > img"
+      ".k-container > img"
     ).src = `./assets/icons/Logo_dark.png`;
     document.querySelector(
       ".profile-img-container > img"
