@@ -50,7 +50,7 @@ const data = [
         alt: "A more simple calculator.",
       }
     },
-    header: "A calculator",
+    header: "Calculator",
     website: "https://kostas23github.github.io/whitecalculator/",
     code: "https://github.com/kostas23Github/whitecalculator",
     technologies: {
@@ -70,7 +70,7 @@ const data = [
         alt: "Another page of the site"
       }
     },
-    header: "A small website",
+    header: "Kittsassociates",
     website: "https://kittsassociates.com/",
     code: "",
     technologies: {
@@ -113,9 +113,6 @@ const data = [
     website: "https://polyviewhealth.com/",
     code: "",
     technologies: {
-      // HTML: "40%",
-      // CSS: "53%",
-      // JavaScript: "7%",
     },
   },
   {
@@ -129,7 +126,7 @@ const data = [
         alt: "Pet appointments form UI"
       }
     },
-    header: "Pet appointments management",
+    header: "Pet appointments list",
     website: "https://kostas23github.github.io/linkedin-full-react/",
     code: "https://github.com/kostas23Github/linkedin-full-react",
     technologies: {

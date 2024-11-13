@@ -119,16 +119,19 @@ header.carousel-header-container {
 .card {
   display: flex;
   flex-direction: column;
-  background-color: var(--bg-lv2-color);
   border-radius: 24px;
-  transition: 0.4s;
+  transition: 0.2s;
+}
+
+.card:hover {
+  background-color: var(--bg-lv2-color);
 }
 
 img.card-img {
   margin: 12px;
   width: 412px;
   aspect-ratio: 412/246;
-  border-radius: 24px;
+  border-radius: 16px;
 }
 
 .card-info {
@@ -148,6 +151,7 @@ a.info-link {
   display: flex;
   gap: 12px;
   align-items: center;
+  width: max-content;
 }
 
 i.card-icon {
@@ -213,8 +217,13 @@ a.info-link > span::after {
   top: 9px;
   width: 20px;
   height: 20px;
-  background-color: var(--bg-lv2-color);
   border-radius: 12px;
+  background-color: var(--bg-lv1-color);
+  transition: .2s;
+}
+
+.card:hover .technologies-used-container .inner {
+  background-color: var(--bg-lv2-color);
 }
 
 ul.technologies-used-list {
