@@ -33,32 +33,15 @@ class Slide {
     image.alt = this.site.img.default.alt;
 
     image.addEventListener("mouseenter", () => {
-      Array.from(document.querySelectorAll(".card-img")).forEach(
-        (img, index) => {
-          img.src = data[index].img.default.src;
-          img.alt = data[index].img.default.alt;
-        }
-      );
-      // Hover image animation.
-      gsap
-        .timeline()
-        .to(image, { opacity: 0, duration: .1 })
-        .add(() => {
-          // Hover image change.
-          image.src = this.site.img.hover.src;
-          image.alt = this.site.img.hover.alt;
-        })
-        .to(image, { opacity: 1, duration: .3 });
+      // Hover image change.
+      image.src = this.site.img.hover.src;
+      image.alt = this.site.img.hover.alt;
     });
 
     image.addEventListener("mouseleave", () => {
       // Reset all cards' hover image.
-      Array.from(document.querySelectorAll(".card-img")).forEach(
-        (img, index) => {
-          img.src = data[index].img.default.src;
-          img.alt = data[index].img.default.alt;
-        }
-      );
+      image.src = this.site.img.default.src;
+      image.alt = this.site.img.default.alt;
     });
 
     const cardInfo = this.createElement("div", card, "card-info");
