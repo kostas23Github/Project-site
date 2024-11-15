@@ -10,7 +10,7 @@ const data = [
         alt: "A screenshot containing another section of the website."
       }
     },
-    header: "Mind Aliance",
+    header: "Mind Alliance",
     website: "https://kostas23github.github.io/mindful-aliance/",
     code: "https://github.com/kostas23Github/mindful-aliance",
     technologies: {
