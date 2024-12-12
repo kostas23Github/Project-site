@@ -32,7 +32,7 @@ nav {
 
 /* dialog speech bubble shape */
 #k-tooltip::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 1px;
   right: 40%;
@@ -68,19 +68,67 @@ nav {
 }
 
 ul.social-list {
-  /* height: 24px; */
   align-items: center;
   gap: 18px;
 }
 
-/* Select all li items except the first(i.e. the secondary button). */
-a#CV-btn {
-  display: block; /* By default set to inline, so the transform property won't work. */
-}
-
-ul.social-list > li.social-item, .data-theme-toggle {
+ul.social-list > li.social-item,
+.data-theme-toggle {
   width: 24px;
   height: 24px;
+}
+
+.tooltip-container {
+  position: relative;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: max-content;
+  background-color: var(--text-color);
+  color: var(--bg-lv1-color);
+  font-size: 16px;
+  text-align: center;
+  border-radius: 8px;
+  padding: 5px 10px;
+  z-index: 1;
+  transform: translate(calc(-50% + 12px), 20%);
+  opacity: 0;
+  white-space: nowrap;
+}
+
+.menu-container li.social-item:last-child .tooltip-text {
+  transform: translate(calc(-50% + 4px), 20%);
+}
+
+footer .tooltip-text {
+  background-color: var(--brand-white);
+  color: var(--brand-dark);
+}
+
+/* Tooltip arrow */
+.tooltip-arrow {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-left: -1px;
+  border-width: 7px;
+  border-style: solid;
+  border-color: transparent transparent var(--text-color) transparent;
+}
+
+footer .tooltip-arrow {
+  border-color: transparent transparent var(--brand-white) transparent;
+}
+
+.tooltip-container:hover .tooltip-text,
+.tooltip-container:hover .tooltip-arrow {
+  visibility: visible;
+  opacity: 0.9;
+  transition: opacity 0.3s 0.3s;
 }
 
 .data-theme-toggle {
@@ -89,8 +137,9 @@ ul.social-list > li.social-item, .data-theme-toggle {
 }
 
 span.toggle-theme-btn {
-  font-size: 24px;
+  font-size: 30px;
   position: absolute;
+  top: -4px; /* Correct vertical position. */
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.4s ease-in, visibility 0.4s;
@@ -104,12 +153,23 @@ span.toggle-theme-btn.visible {
   transition: opacity 0.4s ease-in, visibility 0.4s;
 }
 
+.data-theme-toggle .tooltip-text {
+  position: relative;
+  right: 50%;
+  transform: translate(calc(-50% + 12px), 100%);
+}
+
+.data-theme-toggle .tooltip-arrow {
+  transform: translate(-15%, 93%);
+}
+
 @media (max-width: 1100px) {
   nav {
     padding: 36px 0;
   }
 
-  .menu-container, ul.social-list {
+  .menu-container,
+  ul.social-list {
     gap: 16px;
   }
 }
@@ -126,14 +186,23 @@ span.toggle-theme-btn.visible {
     justify-content: space-between;
     align-items: center;
   }
-  
+
   .k-container > #k-tooltip {
     top: -25px; /* Not much space available. */
   }
 
   .menu-container {
-    width: 100%;
+    margin: 0 auto;
   }
+
+  ul.social-list {
+    gap: 70px;
+  }
+
+  .menu-container li.social-item:last-child .tooltip-text {
+    transform: translate(calc(-50% + 12px), 20%);
+  }
+
 }
 
 @media (max-width: 500px) {
@@ -142,8 +211,9 @@ span.toggle-theme-btn.visible {
   }
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .data-theme-toggle:hover {
-    transform: scale(1.2);
+/* Hide all tooltip elements on devices that their primary select method isn't a mouse, i.e. smartphones, tablets. */
+@media (pointer: coarse) {
+  .tooltip-text, .tooltip-arrow {
+    display: none;
   }
 }

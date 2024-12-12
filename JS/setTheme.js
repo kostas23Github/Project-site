@@ -8,6 +8,7 @@
 
 const sunBtn = document.getElementById("light-mode-btn");
 const moonBtn = document.getElementById("dark-mode-btn");
+const tooltip = document.querySelector(".data-theme-toggle .tooltip-text");
 
 function setTheme(theme) {
   // Toggle current theme value.
@@ -15,7 +16,7 @@ function setTheme(theme) {
 
   // Set html theme.
   document.documentElement.setAttribute("data-theme", newTheme);
-
+  tooltip.textContent = newTheme === "dark" ? "Light" : "Dark";
   // Save current theme state, to keep its value even on page load.
   localStorage.setItem("theme", newTheme);
 
@@ -90,9 +91,11 @@ function setTheme(theme) {
   if (savedTheme === "light") {
     moonBtn.classList.remove("visible");
     sunBtn.classList.add("visible");
+    tooltip.textContent = "Dark";
   } else if (savedTheme === "dark") {
     moonBtn.classList.add("visible");
     sunBtn.classList.remove("visible");
+    tooltip.textContent = "Light";
   }
 })();
 
