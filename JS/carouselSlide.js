@@ -83,7 +83,7 @@ class Slide {
     );
 
     const spanGithub = this.createElement("span", aViewCodeTag);
-    spanGithub.textContent = "View code on Github";
+    spanGithub.textContent = "View code";
 
     const aViewSiteTag = this.createElement(
       "a",
@@ -104,7 +104,7 @@ class Slide {
     );
 
     const spanWebsite = this.createElement("span", aViewSiteTag);
-    spanWebsite.textContent = "View on Web";
+    spanWebsite.textContent = "See it in action";
 
     this.cardTechnologies(cardInfoLinks);
 
