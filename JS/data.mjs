@@ -2,6 +2,24 @@ const data = [
   {
     img: {
       default: {
+        src: "./assets/sites/Furniro/Shop page.png",
+        alt: "A screenshot containing the Shop page of the e-commerce."
+      },
+      hover: {
+        src: "./assets/sites/Furniro/Single Product page.png",
+        alt: "A screenshot containing the page of each product individualy."
+      }
+    },
+    header: "Furniro E-commerce",
+    website: "https://kostas23github.github.io/Furniro/",
+    code: "https://github.com/kostas23Github/Furniro",
+    technologies: {
+      React: "98%",
+    },
+  },
+  {
+    img: {
+      default: {
         src: "./assets/sites/Mindful-aliance.jpeg",
         alt: "A screenshot containing the 1st section of the website."
       },
