@@ -247,6 +247,6 @@ data.forEach((project, index) => {
   const slide = new Slide(project);
   // For each slide use the createCard() method to create the card(main-only) item of the slide.
   const card = slide.createCard();
-  // if (index === 0) card.classList.add("inDevelopment"); // Removed the Developement banner.
+  // if (index === 0) card.classList.add("inDevelopment"); // Removed the Development banner.
   document.querySelector(".carousel-slides").appendChild(card);
 });
